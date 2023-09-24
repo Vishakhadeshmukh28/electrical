@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>modal box</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            background-color: white;
+            font-family: arial;
+        }
+        h1{
+            text-align: center;
+        }
+        .container{
+            width: 1100px;
+            margin: 0 auto;
+        }
+        .modal-container .modal-btn{
+            display: block;
+            color: white;
+            background-color: rgb(177, 55, 75);
+            width: 150px;
+            height: 50px;
+            font-size: 22px;
+            line-height: 50px;
+            text-align: center;
+            border-radius: 3px;
+            cursor: pointer;
+            box-shadow: 0 5px 5px -5px #333;
+            transition: background-color 0.3s ease-in;
+        }
+        .modal-container .modal-btn:hover{
+            background-color: rgb(184, 25, 52);
+        }
+        #modal-toggle{
+            display: none;
+        }
+        .modal-container .modal-content,
+        .modal-container .modal-backdrop{
+            width: 0;
+            height: 0;
+            opacity: 0;
+            visibility: hidden;
+            cursor: pointer;
+            transition: opacity 0.2s ease-in;
+        }
+        .modal-container #modal-toggle:checked ~ .modal-backdrop{
+            background-color: rgba(0, 0, 0, 0.6);
+            width: 100vw;
+            height: 100vw;
+            position: fixed;
+            left: 0%;
+            top: 0%;
+            z-index: 10;
+            visibility: visible;
+            opacity: 1;
+            transition: opacity 0.2s ease-in;
+        }
+        .modal-container #modal-toggle:checked ~ .modal-content{
+            background-color: #fff;
+            width: 400px;
+            height: 300px;
+            padding:10px 30px ;
+            border-radius: 4px;
+            position: fixed;
+            top: 12%;
+            left: calc(50% - 200px);
+            z-index: 1000;
+            cursor: auto;
+            visibility: visible;
+            opacity: 1;
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>modal box in pure css</h1>
+        <div class="modal-container">
+        <input type="checkbox" name="" id="modal-toggle">
+        <label for="modal-toggle" class="modal-btn"> click Me</label>
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <label for="modal-toggle" class="modal-close">&times;</label>
+            <h2>Modal Title</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, qui molestias cum quas odio ut ullam officia eius voluptate iure. Possimus vitae dignissimos hic unde iusto nostrum necessitatibus dolore alias.</p>
+            <label for="modal-toggle" class="modal-content-btn">ok</label>
+        </div>
+    </div>
+    <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda sequi ratione minima asperiores vero obcaecati quia suscipit saepe, nam numquam, eum nihil, mollitia debitis fugiat iusto expedita neque accusantium repellendus.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, nihil! Atque amet, odio fugiat veniam nulla, libero non deserunt laborum debitis enim vero eius odit pariatur ullam eum, laudantium harum rerum consectetur? Quaerat voluptate dolorem excepturi reiciendis? Earum ullam aperiam suscipit velit eum alias fugit et reprehenderit? A, fugit quam!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, quibusdam porro, temporibus atque ratione maiores fugiat id nemo magnam cupiditate cum. Nihil accusamus sed incidunt eaque est. Voluptatibus blanditiis incidunt quaerat impedit sed ipsam enim harum, voluptatum atque, qui iste asperiores non aliquam earum exercitationem deleniti, corporis reprehenderit recusandae eligendi.
+    </p>
+    </div>
+</body>
+</html>
